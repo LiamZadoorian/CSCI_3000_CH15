@@ -7,14 +7,14 @@ class Appliance {
         virtual void turnOn() = 0;
 };
 
-class Fan {
+class Fan : public Appliance{
     public:
         void turnOn(){
             cout << "Fan starts rotating.\n";
         }
 };
 
-class AC {
+class AC : public Appliance{
     public:
         void turnOn(){
             cout << "Air Conditioner starts cooling.\n";
