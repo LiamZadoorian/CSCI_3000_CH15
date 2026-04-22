@@ -1,14 +1,38 @@
-//
-//  main.cpp
-//  CSCI_3000_CH15
-//
-//  Created by Liam Riley Zadoorian on 4/21/26.
-//
-
 #include <iostream>
+#include <string>
+using namespace std;
+
+class Course {
+    public:
+        virtual void startClass() = 0;
+};
+
+class Programming : public Course{
+    public:
+        void startClass(){
+            cout << "Programming class has started\n";
+        }
+};
+
+class Math : public Course{
+    public:
+        void startClass(){
+            cout << "Math class has started\n";
+        }
+};
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    Course *crs_pntr;
+    
+    Programming prgm;
+    Math math;
+    
+    crs_pntr = &prgm;
+    crs_pntr->startClass();
+    
+    crs_pntr = &math;
+    crs_pntr->startClass();
+    
     return 0;
 }
