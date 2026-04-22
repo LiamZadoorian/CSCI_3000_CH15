@@ -1,14 +1,33 @@
-//
-//  main.cpp
-//  CSCI_3000_CH15
-//
-//  Created by Liam Riley Zadoorian on 4/21/26.
-//
-
 #include <iostream>
+#include <string>
+using namespace std;
+
+class Appliance {
+    public:
+        virtual void turnOn() = 0;
+};
+
+class Fan {
+    public:
+        void turnOn(){
+            cout << "Fan starts rotating.\n";
+        }
+};
+
+class AC {
+    public:
+        void turnOn(){
+            cout << "Air Conditioner starts cooling.\n";
+        }
+};
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    Fan fan;
+    AC ac;
+    
+    fan.turnOn();
+    ac.turnOn();
+    
     return 0;
 }
